@@ -19,7 +19,7 @@ import com.indiamart.qa.pageobjects.homepage;
 import com.indiamart.qa.utils.utilities;
 
 
-//Updated comment 
+//Updated comment - added more details
 
 public class SearchTest extends base{
 	
