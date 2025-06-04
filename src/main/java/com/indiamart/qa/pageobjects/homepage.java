@@ -1,5 +1,6 @@
 package com.indiamart.qa.pageobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -57,4 +58,11 @@ public class homepage {
 		searchbtn.click();
 	}
 	
+	public void clickonsearchbutton(WebElement element) {
+			element = driver.findElement(By.xpath("//li[@id='lshead']"));
+			element.click();
+	}
+	public void clickonsearchbutton(By Locator) {
+		driver.findElement(By.xpath("//li[@id='lshead']")).click();
+	}
 }

@@ -72,7 +72,7 @@ public class SearchTest extends base{
 		return searchdata;
 	}
 
-	@Test(priority=3)
+	@Test(priority=3, invocationCount = 2)
 	public void searchwithnoinputs() {
 		
 		homepage hmpage = new homepage(driver);

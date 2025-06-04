@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -18,7 +19,6 @@ public class base {
 	WebDriver driver;
 	public Properties prop;
 	public Properties dataprop;
-	
 	public base() {
 		
 		prop = new Properties();
@@ -66,8 +66,8 @@ public class base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(utilities.Implicit_Wait_Time));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(utilities.Page_Load_Time));
 		driver.get(prop.getProperty("url"));
-		
-		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
 		return driver;
 		
 		

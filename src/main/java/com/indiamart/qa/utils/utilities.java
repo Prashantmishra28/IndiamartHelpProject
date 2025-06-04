@@ -3,7 +3,6 @@ package com.indiamart.qa.utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Random;
 
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -11,13 +10,10 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class utilities {
 	
@@ -127,24 +123,12 @@ public class utilities {
 		try {
 			FileHandler.copy(srcScreenshot,new File(screenshotpath));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		return screenshotpath;
 	}
-	
-	public static void waitForPageToLoad(WebDriver driver) {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	    wait.until(new ExpectedCondition<Boolean>() {
-	        public Boolean apply(WebDriver webDriver) {
-	            String readyState = ((JavascriptExecutor) webDriver)
-	                .executeScript("return document.readyState").toString();
-	            return readyState.equals("complete");
-	        }
-	    });
-	}
-	
+		
 }
 
 

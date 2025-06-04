@@ -64,8 +64,7 @@ public class SigninTest extends base{
 		signinpopup.mobileinput(utilities.generateInvalidMobileNumber());
 		signinpopup.clickonsubmitbtn();
 		String actualerrormsg = signinpopup.getinvalidmobilenumbererrormessagetext();
-		String expectederrormsg = dataprop.getProperty("invalidmobilenumberwarningmsg");
-		Assert.assertTrue(actualerrormsg.contains(expectederrormsg), "Error message is not visible");
+		Assert.assertTrue(actualerrormsg.contains(dataprop.getProperty("invalidmobilenumberwarningmsg")), "Error message is not visible");
 	}
 	
 	@Test(priority=3)
@@ -73,7 +72,6 @@ public class SigninTest extends base{
 		
 		signinpopup.clickonsubmitbtn();
 		String actualerrormsg = signinpopup.EnterMobileNumberErrorMessageText();
-		String expectederrormsg = dataprop.getProperty("nomobilenumbermsg");
-		Assert.assertTrue(actualerrormsg.contains(expectederrormsg), "Error message is not visible");
+		Assert.assertTrue(actualerrormsg.contains(dataprop.getProperty("nomobilenumbermsg")), "Error message is not visible");
 	}
 }

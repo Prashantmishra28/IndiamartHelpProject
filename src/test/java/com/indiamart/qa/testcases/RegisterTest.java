@@ -53,6 +53,13 @@ public class RegisterTest extends base{
 //		WebElement hi = driver.findElement(By.id("wel_name"));
 //		WebElement ViewProfile = driver.findElement(By.xpath("//a[text()='View Profile']"));
 //		hower.moveToElement(hi).pause(1000).moveToElement(ViewProfile).build().perform();
+		
+//		Wait <WebDriver> fwait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(10)).ignoring(NoSuchElementException.class);
+//		WebElement element = fwait.until(new Function<WebDriver, WebElement> {
+//			public WebElement apply(WebDriver driver) {
+//			return driver.findElement(By.xpath("//a[@id='user_sign_in']"));}
+//			
+//		});
 		Assert.assertTrue(hmpage.hiTexxtVisiblity(), "Webelement not found on the page");
 }
 	
