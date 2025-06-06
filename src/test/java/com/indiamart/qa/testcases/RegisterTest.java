@@ -45,7 +45,7 @@ public class RegisterTest extends base{
 //		WebElement Joinnow = driver.findElement(By.cssSelector(".h_clr.bld"));
 //		Actions hower = new Actions(driver);
 //		hower.moveToElement(signin).pause(1000).moveToElement(Joinnow).click().build().perform();
-		// i have done changes
+		// i have done changes 
 		hmpage.howerfromsigintojoinow();
 		signinpopup.mobileinput(utilities.generateRandomMobileNumber());
 		signinpopup.clickonsubmitbtn();
