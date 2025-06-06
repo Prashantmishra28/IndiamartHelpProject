@@ -5,8 +5,9 @@
     <classes>
       <class name="com.indiamart.qa.testcases.RegisterTest">
         <methods>
-          <include name="verifyRegisteringonhelp"/>
           <include name="closure"/>
+          <include name="verifyRegisteringwithnoCredentials"/>
+          <include name="verifyRegisteringwithinvalidCredentials"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.indiamart.qa.testcases.RegisterTest -->

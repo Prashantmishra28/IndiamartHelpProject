@@ -45,6 +45,7 @@ public class SearchTest extends base{
 		WebElement searchmsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@class='trail-items']")));
 		Assert.assertTrue(searchmsg.isDisplayed(), "Not on Buyer page");
 		driver.quit();
+		
 	}
 	
 	@DataProvider(name="ValidSearchInputs")

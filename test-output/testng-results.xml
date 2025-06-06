@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-04T21:40:59 IST" name="Default suite" finished-at="2025-06-04T21:41:02 IST" duration-ms="3470">
+  <suite started-at="2025-06-06T10:27:31 IST" name="Default suite" finished-at="2025-06-06T10:27:43 IST" duration-ms="11833">
     <groups>
     </groups>
-    <test started-at="2025-06-04T21:40:59 IST" name="Default test" finished-at="2025-06-04T21:41:02 IST" duration-ms="3470">
-      <class name="com.indiamart.qa.testcases.SigninTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.indiamart.qa.testcases.SigninTest@36ebc363]" started-at="2025-06-04T21:40:59 IST" name="setup" finished-at="2025-06-04T21:41:01 IST" duration-ms="2687" status="PASS">
+    <test started-at="2025-06-06T10:27:31 IST" name="Default test" finished-at="2025-06-06T10:27:43 IST" duration-ms="11833">
+      <class name="com.indiamart.qa.testcases.RegisterTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.indiamart.qa.testcases.RegisterTest@6771beb3]" started-at="2025-06-06T10:27:31 IST" name="setup" finished-at="2025-06-06T10:27:34 IST" duration-ms="2657" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifySigninWithInValidCredentials()[pri:2, instance:com.indiamart.qa.testcases.SigninTest@36ebc363]" started-at="2025-06-04T21:41:01 IST" name="VerifySigninWithInValidCredentials" finished-at="2025-06-04T21:41:02 IST" duration-ms="591" status="PASS">
+        <test-method signature="verifyRegisteringonhelp()[pri:1, instance:com.indiamart.qa.testcases.RegisterTest@6771beb3]" started-at="2025-06-06T10:27:34 IST" name="verifyRegisteringonhelp" finished-at="2025-06-06T10:27:35 IST" duration-ms="1544" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifySigninWithInValidCredentials -->
-        <test-method is-config="true" signature="closure()[pri:0, instance:com.indiamart.qa.testcases.SigninTest@36ebc363]" started-at="2025-06-04T21:41:02 IST" name="closure" finished-at="2025-06-04T21:41:02 IST" duration-ms="158" status="PASS">
+        </test-method> <!-- verifyRegisteringonhelp -->
+        <test-method is-config="true" signature="closure()[pri:0, instance:com.indiamart.qa.testcases.RegisterTest@6771beb3]" started-at="2025-06-06T10:27:35 IST" name="closure" finished-at="2025-06-06T10:27:36 IST" duration-ms="148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closure -->
-      </class> <!-- com.indiamart.qa.testcases.SigninTest -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.indiamart.qa.testcases.RegisterTest@6771beb3]" started-at="2025-06-06T10:27:36 IST" name="setup" finished-at="2025-06-06T10:27:38 IST" duration-ms="2098" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringwithinvalidCredentials()[pri:2, instance:com.indiamart.qa.testcases.RegisterTest@6771beb3]" started-at="2025-06-06T10:27:38 IST" name="verifyRegisteringwithinvalidCredentials" finished-at="2025-06-06T10:27:39 IST" duration-ms="1455" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringwithinvalidCredentials -->
+        <test-method is-config="true" signature="closure()[pri:0, instance:com.indiamart.qa.testcases.RegisterTest@6771beb3]" started-at="2025-06-06T10:27:39 IST" name="closure" finished-at="2025-06-06T10:27:39 IST" duration-ms="146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closure -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.indiamart.qa.testcases.RegisterTest@6771beb3]" started-at="2025-06-06T10:27:39 IST" name="setup" finished-at="2025-06-06T10:27:41 IST" duration-ms="2170" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringwithnoCredentials()[pri:3, instance:com.indiamart.qa.testcases.RegisterTest@6771beb3]" started-at="2025-06-06T10:27:41 IST" name="verifyRegisteringwithnoCredentials" finished-at="2025-06-06T10:27:43 IST" depends-on-methods="com.indiamart.qa.testcases.RegisterTest.verifyRegisteringwithinvalidCredentials" duration-ms="1415" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringwithnoCredentials -->
+        <test-method is-config="true" signature="closure()[pri:0, instance:com.indiamart.qa.testcases.RegisterTest@6771beb3]" started-at="2025-06-06T10:27:43 IST" name="closure" finished-at="2025-06-06T10:27:43 IST" duration-ms="154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closure -->
+      </class> <!-- com.indiamart.qa.testcases.RegisterTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

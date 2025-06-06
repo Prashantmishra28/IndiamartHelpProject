@@ -3,6 +3,7 @@ package com.indiamart.qa.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -64,5 +65,10 @@ public class homepage {
 	}
 	public void clickonsearchbutton(By Locator) {
 		driver.findElement(By.xpath("//li[@id='lshead']")).click();
+		
+	}
+	public void howerfromsigintojoinow() {
+		Actions hower = new Actions(driver);
+		hower.moveToElement(signinbtn).pause(1000).moveToElement(joinnowbtn).click().build().perform();	
 	}
 }

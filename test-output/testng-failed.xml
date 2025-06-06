@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [com.indiamartproject Automation Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.indiamart.qa.listeners.Listeners"/>
-  </listeners>
-  <test thread-count="2" parallel="tests" name="Indiamart Help Testcases(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.indiamart.qa.testcases.RegisterTest">
         <methods>
-          <include name="verifyRegisteringonhelp"/>
           <include name="closure"/>
           <include name="verifyRegisteringwithnoCredentials"/>
           <include name="verifyRegisteringwithinvalidCredentials"/>
@@ -16,5 +12,5 @@
         </methods>
       </class> <!-- com.indiamart.qa.testcases.RegisterTest -->
     </classes>
-  </test> <!-- Indiamart Help Testcases(failed) -->
-</suite> <!-- Failed suite [com.indiamartproject Automation Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

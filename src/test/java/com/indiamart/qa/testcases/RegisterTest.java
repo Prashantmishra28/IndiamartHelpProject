@@ -1,9 +1,6 @@
 package com.indiamart.qa.testcases;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,12 +18,16 @@ public class RegisterTest extends base{
 	}
 	
 	public WebDriver driver;
+	public homepage hmpage;
+	public signinpopup signinpopup;
 	
 	@BeforeMethod
 	
 	public void setup() {
 		
 		driver = browserSetupandOpenApplication(prop.getProperty("browser"));
+		hmpage =new homepage(driver);
+		signinpopup = new signinpopup(driver);
 	}
 	
 	@AfterMethod
@@ -40,26 +41,14 @@ public class RegisterTest extends base{
 	
 	public void verifyRegisteringonhelp() {
 	
-		WebElement signin = driver.findElement(By.xpath("//a[@id='user_sign_in']"));
-		WebElement Joinnow = driver.findElement(By.cssSelector(".h_clr.bld"));
-		Actions hower = new Actions(driver);
-		hower.moveToElement(signin).pause(1000).moveToElement(Joinnow).click().build().perform();
-		signinpopup signinpopup= new signinpopup(driver);
+//		WebElement signin = driver.findElement(By.xpath("//a[@id='user_sign_in']"));
+//		WebElement Joinnow = driver.findElement(By.cssSelector(".h_clr.bld"));
+//		Actions hower = new Actions(driver);
+//		hower.moveToElement(signin).pause(1000).moveToElement(Joinnow).click().build().perform();
+		
+		hmpage.howerfromsigintojoinow();
 		signinpopup.mobileinput(utilities.generateRandomMobileNumber());
 		signinpopup.clickonsubmitbtn();
-		homepage hmpage = new homepage(driver);
-//	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[text()='Buying on IndiaMART']")));
-//		WebElement hi = driver.findElement(By.id("wel_name"));
-//		WebElement ViewProfile = driver.findElement(By.xpath("//a[text()='View Profile']"));
-//		hower.moveToElement(hi).pause(1000).moveToElement(ViewProfile).build().perform();
-		
-//		Wait <WebDriver> fwait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(10)).ignoring(NoSuchElementException.class);
-//		WebElement element = fwait.until(new Function<WebDriver, WebElement> {
-//			public WebElement apply(WebDriver driver) {
-//			return driver.findElement(By.xpath("//a[@id='user_sign_in']"));}
-//			
-//		});
 		Assert.assertTrue(hmpage.hiTexxtVisiblity(), "Webelement not found on the page");
 }
 	
@@ -67,11 +56,7 @@ public class RegisterTest extends base{
 	public void verifyRegisteringwithinvalidCredentials() {
 		
 
-		WebElement signin = driver.findElement(By.id("user_sign_in"));
-		WebElement Joinnow = driver.findElement(By.xpath("//p[@class='h_clr bld']"));
-		Actions hower = new Actions(driver);
-		hower.moveToElement(signin).pause(1000).moveToElement(Joinnow).click().build().perform();
-		signinpopup signinpopup= new signinpopup(driver);
+		hmpage.howerfromsigintojoinow();
 		signinpopup.mobileinput(utilities.generateInvalidMobileNumber());
 		signinpopup.clickonsubmitbtn();
 		String actualerrormsg = signinpopup.getinvalidmobilenumbererrormessagetext();;
@@ -81,15 +66,10 @@ public class RegisterTest extends base{
 	@Test(priority = 3, dependsOnMethods={"verifyRegisteringwithinvalidCredentials"})
 	public void verifyRegisteringwithnoCredentials() {
 
-		WebElement signin = driver.findElement(By.id("user_sign_in"));
-		WebElement Joinnow = driver.findElement(By.xpath("//p[@class='h_clr bld']"));
-		Actions hower = new Actions(driver);
-		hower.moveToElement(signin).pause(1000).moveToElement(Joinnow).click().build().perform();
-		signinpopup signinpopup= new signinpopup(driver);
+		hmpage.howerfromsigintojoinow();
 		signinpopup.clickonsubmitbtn();
 		String actualerrormsg = signinpopup.EnterMobileNumberErrorMessageText();
-		String expectederrormsg = dataprop.getProperty("nomobilenumbermsg");
-		Assert.assertTrue(actualerrormsg.contains(expectederrormsg), "Error message is not visible");
+		Assert.assertTrue(actualerrormsg.contains(dataprop.getProperty("nomobilenumbermsg")), "Error message is not visible");
 	}
 
 }
