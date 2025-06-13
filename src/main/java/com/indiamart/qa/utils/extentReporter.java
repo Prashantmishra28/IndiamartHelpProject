@@ -2,6 +2,8 @@ package com.indiamart.qa.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -12,7 +14,8 @@ public class extentReporter {
 	public static ExtentReports createextentreport() {
 		
 		ExtentReports extentRpt =new ExtentReports();
-		File extentrptfile = new File(System.getProperty("user.dir")+"\\test-output\\ExtentReports\\extentrpt.html");
+		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+		File extentrptfile = new File(System.getProperty("user.dir")+"\\test-output\\ExtentReports\\extentrpt_"+ timestamp + ".html");
 		
 		ExtentSparkReporter sparkRpt = new ExtentSparkReporter(extentrptfile);
 		sparkRpt.config().setTheme(Theme.DARK);

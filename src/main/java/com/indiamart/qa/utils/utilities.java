@@ -3,6 +3,7 @@ package com.indiamart.qa.utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Random;
 
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -19,6 +20,8 @@ public class utilities {
 	
 	public static final int Implicit_Wait_Time = 10;
 	public static final int Page_Load_Time = 20;
+	public static final Duration Timeout = Duration.ofSeconds(20);
+
 
 	public static String generateRandomMobileNumber() {
 			

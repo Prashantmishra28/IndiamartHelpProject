@@ -19,6 +19,7 @@ public class base {
 	WebDriver driver;
 	public Properties prop;
 	public Properties dataprop;
+	ChromeOptions options;
 	public base() {
 		
 		prop = new Properties();
@@ -44,10 +45,14 @@ public class base {
 	}
 	public WebDriver browserSetupandOpenApplication(String browsername) {
 		
+		options = new ChromeOptions();
+//		options.addArguments("headless");
+		options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/114.0.0.0 Safari/537.36");
+
 		
 		if (browsername.equalsIgnoreCase("chrome")) {
 			
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
 			
 		}else if (browsername.equalsIgnoreCase("firefox")) {
 			
@@ -66,11 +71,7 @@ public class base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(utilities.Implicit_Wait_Time));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(utilities.Page_Load_Time));
 		driver.get(prop.getProperty("url"));
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
 		return driver;
-		
-		
 	}
 
 }

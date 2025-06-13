@@ -9,6 +9,8 @@
       <class name="com.indiamart.qa.testcases.SigninTest"/>
       <class name="com.indiamart.qa.testcases.RegisterTest"/>
       <class name="com.indiamart.qa.testcases.SearchTest"/>
+      <class name="com.indiamart.qa.testcases.QuicklinksTest"/>
+      <class name="com.indiamart.qa.testcases.TopBarTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

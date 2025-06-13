@@ -1,12 +1,8 @@
 package com.indiamart.qa.testcases;
 
-import java.time.Duration;
-
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -31,7 +27,6 @@ public class SearchTest extends base{
 	public void setup() {
 		
 		driver = browserSetupandOpenApplication(prop.getProperty("browser"));
-		
 	}
 	
 	
@@ -41,11 +36,8 @@ public class SearchTest extends base{
 		homepage hmpage = new homepage(driver);
 		hmpage.inputInSearchBox(SearchInputs);
 		hmpage.clickonsearchbutton();
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-		WebElement searchmsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@class='trail-items']")));
-		Assert.assertTrue(searchmsg.isDisplayed(), "Not on Buyer page");
+		Assert.assertTrue(hmpage.visiblityofbreadcrumb(), "Not on Buyer page");
 		driver.quit();
-		
 	}
 	
 	@DataProvider(name="ValidSearchInputs")
@@ -61,9 +53,7 @@ public class SearchTest extends base{
 		homepage hmpage = new homepage(driver);
 		hmpage.inputInSearchBox(InvalidSearchInputs);
 		hmpage.clickonsearchbutton();
-		String ActualSearchMessage = driver.findElement(By.xpath("//p[contains(text(),'Sorry, but nothing matched your search terms. Plea')]")).getText();
-		String ExpectedSearchMessage =  dataprop.getProperty("invalidsearchmessage");
-		Assert.assertEquals(ActualSearchMessage, ExpectedSearchMessage,"No Product message is not visible");
+		Assert.assertTrue(hmpage.visiblityofactualsearchmessage(),"No Product message is not visible");;
 		driver.quit();
 	}
 	
@@ -78,7 +68,7 @@ public class SearchTest extends base{
 		
 		homepage hmpage = new homepage(driver);
 		hmpage.clickonsearchbutton();
-		WebDriverWait waitforalert = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait waitforalert = new WebDriverWait(driver,utilities.Timeout);
 		try {
 		    Alert alert = waitforalert.until(ExpectedConditions.alertIsPresent());
 		    alert.accept();

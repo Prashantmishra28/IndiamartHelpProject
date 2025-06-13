@@ -55,7 +55,6 @@ public class RegisterTest extends base{
 	@Test(priority = 2)
 	public void verifyRegisteringwithinvalidCredentials() {
 		
-
 		hmpage.howerfromsigintojoinow();
 		signinpopup.mobileinput(utilities.generateInvalidMobileNumber());
 		signinpopup.clickonsubmitbtn();
@@ -63,7 +62,7 @@ public class RegisterTest extends base{
 		Assert.assertTrue(actualerrormsg.contains(dataprop.getProperty("invalidmobilenumberwarningmsg")), "Error message is not visible");
 	}
 	
-	@Test(priority = 3, dependsOnMethods={"verifyRegisteringwithinvalidCredentials"})
+	@Test(priority = 3)
 	public void verifyRegisteringwithnoCredentials() {
 
 		hmpage.howerfromsigintojoinow();

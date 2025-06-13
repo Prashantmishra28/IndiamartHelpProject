@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.indiamart.qa.testcases.RegisterTest">
+      <class name="com.indiamart.qa.testcases.TopBarTest">
         <methods>
-          <include name="closure"/>
-          <include name="verifyRegisteringwithnoCredentials"/>
-          <include name="verifyRegisteringwithinvalidCredentials"/>
           <include name="setup"/>
+          <include name="VerifyGetbestPriceCtaClickandRedirection"/>
+          <include name="closure"/>
         </methods>
-      </class> <!-- com.indiamart.qa.testcases.RegisterTest -->
+      </class> <!-- com.indiamart.qa.testcases.TopBarTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
